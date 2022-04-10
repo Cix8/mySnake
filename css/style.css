@@ -21,20 +21,19 @@ ul {
     padding: 2px;
 }
 
-.grill {
+.row {
     display: flex;
-    flex-wrap: wrap;
-    width: 400px;
+    flex-wrap: nowrap;
 }
 
 .col {
     width: 20px;
     height: 20px;
-    background-color: green;
+    background-color: yellowgreen;
 }
 
 .snake {
-    background-color: black;
+    background-color: green;
 }
 
 .apple {
