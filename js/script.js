@@ -3,7 +3,6 @@ let a = 1;
 let b = 1;
 let c;
 let d;
-console.log(c);
 let nextStep;
 let apple = document.querySelector('.apple');
 const rightBtn = document.getElementById('right-btn');
@@ -33,9 +32,12 @@ rightBtn.addEventListener ('click',
 
         if (snake.classList.contains('apple') == true) {
             c = Math.floor(Math.random() * 20) +1;
+            console.log(c);
             d = Math.floor(Math.random() * 20) +1;
+            console.log(d);
             snake.classList.remove('apple');
             nextStep = document.querySelector('#row-'+c+' .col-'+d);
+            console.log(nextStep);
             nextStep.classList.add('apple');
         }
     }
@@ -63,9 +65,12 @@ leftBtn.addEventListener ('click',
 
         if (snake.classList.contains('apple') == true) {
             c = Math.floor(Math.random() * 20) +1;
+            console.log(c);
             d = Math.floor(Math.random() * 20) +1;
+            console.log(d);
             snake.classList.remove('apple');
             nextStep = document.querySelector('#row-'+c+' .col-'+d);
+            console.log(nextStep);
             nextStep.classList.add('apple');
         }
     }
@@ -93,9 +98,12 @@ downBtn.addEventListener ('click',
 
         if (snake.classList.contains('apple') == true) {
             c = Math.floor(Math.random() * 20) +1;
+            console.log(c);
             d = Math.floor(Math.random() * 20) +1;
+            console.log(d);
             snake.classList.remove('apple');
             nextStep = document.querySelector('#row-'+c+' .col-'+d);
+            console.log(nextStep);
             nextStep.classList.add('apple');
         }
     }
@@ -123,9 +131,12 @@ upBtn.addEventListener ('click',
 
         if (snake.classList.contains('apple') == true) {
             c = Math.floor(Math.random() * 20) +1;
+            console.log(c);
             d = Math.floor(Math.random() * 20) +1;
+            console.log(d);
             snake.classList.remove('apple');
             nextStep = document.querySelector('#row-'+c+' .col-'+d);
+            console.log(nextStep);
             nextStep.classList.add('apple');
         }
     }
