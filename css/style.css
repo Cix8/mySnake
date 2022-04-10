@@ -32,12 +32,12 @@ ul {
     background-color: yellowgreen;
 }
 
-.snake {
-    background-color: green;
-}
-
 .apple {
     background-color: red;
+}
+
+.snake {
+    background-color: green;
 }
 
 .grill-container ul {

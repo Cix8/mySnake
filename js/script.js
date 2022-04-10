@@ -1,7 +1,11 @@
 let snake;
 let a = 1;
 let b = 1;
+let c;
+let d;
+console.log(c);
 let nextStep;
+let apple = document.querySelector('.apple');
 const rightBtn = document.getElementById('right-btn');
 const leftBtn = document.getElementById('left-btn');
 const downBtn = document.getElementById('down-btn');
@@ -26,6 +30,14 @@ rightBtn.addEventListener ('click',
             snake.classList.remove('snake');
             nextStep.classList.add('snake');
         }
+
+        if (snake.classList.contains('apple') == true) {
+            c = Math.floor(Math.random() * 20) +1;
+            d = Math.floor(Math.random() * 20) +1;
+            snake.classList.remove('apple');
+            nextStep = document.querySelector('#row-'+c+' .col-'+d);
+            nextStep.classList.add('apple');
+        }
     }
 )
 
@@ -47,6 +59,14 @@ leftBtn.addEventListener ('click',
 
             snake.classList.remove('snake');
             nextStep.classList.add('snake');
+        }
+
+        if (snake.classList.contains('apple') == true) {
+            c = Math.floor(Math.random() * 20) +1;
+            d = Math.floor(Math.random() * 20) +1;
+            snake.classList.remove('apple');
+            nextStep = document.querySelector('#row-'+c+' .col-'+d);
+            nextStep.classList.add('apple');
         }
     }
 )
@@ -70,6 +90,14 @@ downBtn.addEventListener ('click',
             snake.classList.remove('snake');
             nextStep.classList.add('snake');
         }
+
+        if (snake.classList.contains('apple') == true) {
+            c = Math.floor(Math.random() * 20) +1;
+            d = Math.floor(Math.random() * 20) +1;
+            snake.classList.remove('apple');
+            nextStep = document.querySelector('#row-'+c+' .col-'+d);
+            nextStep.classList.add('apple');
+        }
     }
 )
 
@@ -91,6 +119,14 @@ upBtn.addEventListener ('click',
 
             snake.classList.remove('snake');
             nextStep.classList.add('snake');
+        }
+
+        if (snake.classList.contains('apple') == true) {
+            c = Math.floor(Math.random() * 20) +1;
+            d = Math.floor(Math.random() * 20) +1;
+            snake.classList.remove('apple');
+            nextStep = document.querySelector('#row-'+c+' .col-'+d);
+            nextStep.classList.add('apple');
         }
     }
 )
