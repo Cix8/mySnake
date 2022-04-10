@@ -17,6 +17,14 @@ rightBtn.addEventListener ('click',
 
             snake.classList.remove('snake');
             nextStep.classList.add('snake');
+        } else {
+            b = 1;
+            snake = document.querySelector('.snake')
+            nextStep = document.querySelector('#row-'+a+' .col-'+b);
+            console.log(nextStep);
+
+            snake.classList.remove('snake');
+            nextStep.classList.add('snake');
         }
     }
 )
@@ -25,6 +33,14 @@ leftBtn.addEventListener ('click',
     function () {
         if (b>1) {
             --b;
+            snake = document.querySelector('.snake')
+            nextStep = document.querySelector('#row-'+a+' .col-'+b);
+            console.log(nextStep);
+
+            snake.classList.remove('snake');
+            nextStep.classList.add('snake');
+        } else {
+            b = 20;
             snake = document.querySelector('.snake')
             nextStep = document.querySelector('#row-'+a+' .col-'+b);
             console.log(nextStep);
@@ -45,6 +61,14 @@ downBtn.addEventListener ('click',
     
             snake.classList.remove('snake');
             nextStep.classList.add('snake');
+        } else {
+            a = 1;
+            snake = document.querySelector('.snake')
+            nextStep = document.querySelector('#row-'+a+' .col-'+b);
+            console.log(nextStep);
+
+            snake.classList.remove('snake');
+            nextStep.classList.add('snake');
         }
     }
 )
@@ -57,6 +81,14 @@ upBtn.addEventListener ('click',
             nextStep = document.querySelector('#row-'+a+' .col-'+b);
             console.log(nextStep);
     
+            snake.classList.remove('snake');
+            nextStep.classList.add('snake');
+        } else {
+            a = 20;
+            snake = document.querySelector('.snake')
+            nextStep = document.querySelector('#row-'+a+' .col-'+b);
+            console.log(nextStep);
+
             snake.classList.remove('snake');
             nextStep.classList.add('snake');
         }
