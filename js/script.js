@@ -4,11 +4,38 @@ let b = 1;
 let c;
 let d;
 let nextStep;
-let apple = document.querySelector('.apple');
+let apple;
 const rightBtn = document.getElementById('right-btn');
 const leftBtn = document.getElementById('left-btn');
 const downBtn = document.getElementById('down-btn');
 const upBtn = document.getElementById('up-btn');
+const grill = document.querySelector('.grill');
+
+let row;
+let col;
+
+for (let i = 1; i <= 20; i++) {
+    row = document.createElement('div')
+    row.classList.add('row');
+    row.setAttribute('id', 'row-'+i);
+    for (let j=1; j <= 20; j++) {
+        col = document.createElement('div');
+        col.classList.add('col', 'col-'+j);
+        row.append(col);
+    }
+    grill.append(row);
+}
+
+snake = document.querySelector('#row-'+a+' .col-'+b);
+snake.classList.add('snake');
+
+c = Math.floor(Math.random() * 20) +1;
+console.log(c);
+d = Math.floor(Math.random() * 20) +1;
+console.log(d);
+nextStep = document.querySelector('#row-'+c+' .col-'+d);
+console.log(nextStep);
+nextStep.classList.add('apple');
 
 rightBtn.addEventListener ('click',
     function () {
