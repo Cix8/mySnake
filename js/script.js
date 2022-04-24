@@ -8,6 +8,9 @@ const downBtn = document.getElementById('down-btn');
 console.log(downBtn);
 const rightBtn = document.getElementById('right-btn');
 console.log(rightBtn);
+const scoreDisplay = document.querySelector('.score span');
+console.log(scoreDisplay);
+let score = 0;
 let gridSize = 10;
 
 let x = 1;
@@ -15,7 +18,7 @@ let y = 1;
 let a = numberGenerator(2,gridSize);
 let b = numberGenerator(2,gridSize);
 
-const myInterval = 500;
+let myInterval = 500;
 let time = 0;
 
 createSquareGrid(gridSize, gridContainer);
@@ -208,6 +211,11 @@ function numberGenerator(min, max) {
  * @returns {DOM-element} assign 'apple' class to a specific-random 'div.col'
  */
 function eatingApple() {
+    score++;
+    if (myInterval > 100) {
+        myInterval -= 10;
+    }
+    scoreDisplay.innerHTML = 'SCORE: '+score;
     a = numberGenerator(1, gridSize);
     b = numberGenerator(1, gridSize);
     const moveApple = document.querySelector('#row-'+a+' .col-'+b);
