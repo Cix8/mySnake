@@ -1,7 +1,7 @@
 /* MY-VARIABLES */
 :root {
     --grid-height: 500px;
-    --col-height: calc(500px / 10);
+    --col-height: calc(var(--grid-height) / 10);
 }
 
 /* RESET */
@@ -19,6 +19,7 @@ html {
 button {
     padding: 2px 15px;
     font-weight: bolder;
+    cursor: pointer;
 }
 
 /* MAIN */

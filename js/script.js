@@ -102,7 +102,7 @@ function movementRight() {
     col = document.querySelector('#row-'+y+' .col-'+x);
     console.log(row);
     console.log(col);
-    if (x < 10) {
+    if (x < gridSize) {
         x++;
     } else {
         x = 1;
@@ -131,7 +131,7 @@ function movementLeft() {
     if (x > 1) {
         x--;
     } else {
-        x = 10;
+        x = gridSize;
     }
     row = document.getElementById('row-'+y);
     col = document.querySelector('#row-'+y+' .col-'+x);
@@ -154,7 +154,7 @@ function movementDown() {
     col = document.querySelector('#row-'+y+' .col-'+x);
     console.log(row);
     console.log(col);
-    if (y < 10) {
+    if (y < gridSize) {
         y++;
     } else {
         y = 1;
@@ -183,7 +183,7 @@ function movementUp() {
     if (y > 1) {
         y--;
     } else {
-        y = 10;
+        y = gridSize;
     }
     row = document.getElementById('row-'+y);
     col = document.querySelector('#row-'+y+' .col-'+x);
