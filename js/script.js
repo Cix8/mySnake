@@ -13,8 +13,9 @@ console.log(scoreDisplay);
 let score = 0;
 let gridSize = 10;
 
-let x = 1;
+let x = 2;
 let y = 1;
+const snakeArray = [[x - 1 , y]];
 let a = numberGenerator(2,gridSize);
 let b = numberGenerator(2,gridSize);
 
@@ -25,11 +26,13 @@ createSquareGrid(gridSize, gridContainer);
 
 let row = document.getElementById('row-'+y);
 let col = document.querySelector('#row-'+y+' .col-'+x);
+let tailBox = document.querySelector('#row-'+snakeArray[0][1]+' .col-'+snakeArray[0][0])
 let appleRow = document.getElementById('row-'+a);
 let appleCol = document.querySelector('#row-'+a+' .col-'+b);
 console.log(row);
 console.log(col);
 col.classList.add('snake');
+tailBox.classList.add('snake');
 appleCol.classList.add('apple');
 
 let snakeEating = false;
@@ -98,20 +101,27 @@ function movementRight() {
         eatingApple();
     }
     col.classList.remove('snake');
+    tailBox.classList.remove('snake');
+    snakeArray.shift();
     row = document.getElementById('row-'+y);
     col = document.querySelector('#row-'+y+' .col-'+x);
     console.log(row);
     console.log(col);
     if (x < gridSize) {
-        x++;
+        snakeArray.push([x , y]);
+        x++; 
     } else {
+        snakeArray.push([gridSize, y])
         x = 1;
     }
     row = document.getElementById('row-'+y);
     col = document.querySelector('#row-'+y+' .col-'+x);
+    tailBox = document.querySelector('#row-'+snakeArray[0][1]+' .col-'+snakeArray[0][0]);
     col.classList.add('snake');
+    tailBox.classList.add('snake');
     console.log(row);
     console.log(col);
+    console.log(snakeArray);
 }
 
 /**
@@ -124,18 +134,24 @@ function movementLeft() {
         eatingApple();
     }
     col.classList.remove('snake');
+    tailBox.classList.remove('snake');
+    snakeArray.shift();
     row = document.getElementById('row-'+y);
     col = document.querySelector('#row-'+y+' .col-'+x);
     console.log(row);
     console.log(col);
     if (x > 1) {
+        snakeArray.push([x, y])
         x--;
     } else {
+        snakeArray.push([1, y])
         x = gridSize;
     }
     row = document.getElementById('row-'+y);
     col = document.querySelector('#row-'+y+' .col-'+x);
+    tailBox = document.querySelector('#row-'+snakeArray[0][1]+' .col-'+snakeArray[0][0]);
     col.classList.add('snake');
+    tailBox.classList.add('snake');
     console.log(row);
     console.log(col);
 }
@@ -150,18 +166,24 @@ function movementDown() {
         eatingApple();
     }
     col.classList.remove('snake');
+    tailBox.classList.remove('snake');
+    snakeArray.shift();
     row = document.getElementById('row-'+y);
     col = document.querySelector('#row-'+y+' .col-'+x);
     console.log(row);
     console.log(col);
     if (y < gridSize) {
+        snakeArray.push([x, y]);
         y++;
     } else {
+        snakeArray.push([x, gridSize]);
         y = 1;
     }
     row = document.getElementById('row-'+y);
     col = document.querySelector('#row-'+y+' .col-'+x);
+    tailBox = document.querySelector('#row-'+snakeArray[0][1]+' .col-'+snakeArray[0][0]);
     col.classList.add('snake');
+    tailBox.classList.add('snake');
     console.log(row);
     console.log(col);
 }
@@ -176,18 +198,24 @@ function movementUp() {
         eatingApple();
     }
     col.classList.remove('snake');
+    tailBox.classList.remove('snake');
+    snakeArray.shift();
     row = document.getElementById('row-'+y);
     col = document.querySelector('#row-'+y+' .col-'+x);
     console.log(row);
     console.log(col);
     if (y > 1) {
+        snakeArray.push([x, y]);
         y--;
     } else {
+        snakeArray.push([x, 1]);
         y = gridSize;
     }
     row = document.getElementById('row-'+y);
     col = document.querySelector('#row-'+y+' .col-'+x);
+    tailBox = document.querySelector('#row-'+snakeArray[0][1]+' .col-'+snakeArray[0][0]);
     col.classList.add('snake');
+    tailBox.classList.add('snake');
     console.log(row);
     console.log(col);
 }
