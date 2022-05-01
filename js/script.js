@@ -107,11 +107,10 @@ function movementRight() {
     col = document.querySelector('#row-'+y+' .col-'+x);
     console.log(row);
     console.log(col);
+    snakeArray.push([x , y]);
     if (x < gridSize) {
-        snakeArray.push([x , y]);
         x++; 
     } else {
-        snakeArray.push([gridSize, y])
         x = 1;
     }
     row = document.getElementById('row-'+y);
@@ -140,11 +139,10 @@ function movementLeft() {
     col = document.querySelector('#row-'+y+' .col-'+x);
     console.log(row);
     console.log(col);
+    snakeArray.push([x, y])
     if (x > 1) {
-        snakeArray.push([x, y])
         x--;
     } else {
-        snakeArray.push([1, y])
         x = gridSize;
     }
     row = document.getElementById('row-'+y);
@@ -172,11 +170,10 @@ function movementDown() {
     col = document.querySelector('#row-'+y+' .col-'+x);
     console.log(row);
     console.log(col);
+    snakeArray.push([x, y])
     if (y < gridSize) {
-        snakeArray.push([x, y]);
         y++;
     } else {
-        snakeArray.push([x, gridSize]);
         y = 1;
     }
     row = document.getElementById('row-'+y);
@@ -204,11 +201,10 @@ function movementUp() {
     col = document.querySelector('#row-'+y+' .col-'+x);
     console.log(row);
     console.log(col);
+    snakeArray.push([x, y])
     if (y > 1) {
-        snakeArray.push([x, y]);
         y--;
     } else {
-        snakeArray.push([x, 1]);
         y = gridSize;
     }
     row = document.getElementById('row-'+y);
